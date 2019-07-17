@@ -57,4 +57,14 @@ class Song
       new_song
     end
 
+  def self.create_from_filename(music)
+    array = music.split(" - ")
+        person = array[0]
+        name_array = array[1].split(".mp3")
+          name = name_array[0]
+        new_song = self.create_by_name(name)
+        new_song.artist_name = person
+        new_song
+  end
+
 end
